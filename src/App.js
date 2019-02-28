@@ -1,28 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+
+import {CountProvider} from './contexts/Count';
+
+import QuickInput from './components/QuickInput';
+import Summary from './components/Summary';
+
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      units: [
+        {name: "Object Oriented Programming", grade: "Credit", credit: 12},
+        {name: "Website Development 2", grade: "Pass", credit: 12},
+      ]
+    }
+  }
+
   render() {
+    const {} = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <CountProvider>
+        <div className="App">
+
+          <Summary />
+          <QuickInput/>
+
+        </div>
+      </CountProvider>
+
     );
   }
 }
 
 export default App;
+
+
+
