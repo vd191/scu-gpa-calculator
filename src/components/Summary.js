@@ -14,16 +14,16 @@ export default class Summary extends Component {
           {({gpa, creditPoint, totalUnit, totalPoint, fail, pass, credit, distinction, highDistinction}) =>
             <div>
 
-              <Callout  intent="warning" icon="none">
-                <h3>YOUR GPA: {gpa} </h3>
+              <Callout  intent="warning" icon="none" style={{textAlign:"center"}}>
+                <h3>YOUR GRADE POINT AVERAGE: {gpa} </h3>
               </Callout>
 
 
-                <p>Total Point: {totalPoint} Credit Point: {creditPoint} </p>
-                <p>FAIL UNIT: {fail} PASS UNIT: {pass}</p>
-                <p>CREDIT UNIT: {credit} DISTINCTION UNIT: {distinction} </p>
-                <p>HIGH DISTINCTION UNIT: {highDistinction} </p>
-                <p>TOTAL UNIT: {totalUnit} </p>
+                {/*<p>Total Point: {totalPoint} Credit Point: {creditPoint} </p>*/}
+                {/*<p>FAIL UNIT: {fail} PASS UNIT: {pass}</p>*/}
+                {/*<p>CREDIT UNIT: {credit} DISTINCTION UNIT: {distinction} </p>*/}
+                {/*<p>HIGH DISTINCTION UNIT: {highDistinction} </p>*/}
+                {/*<p>TOTAL UNIT: {totalUnit} </p>*/}
 
 
             </div>

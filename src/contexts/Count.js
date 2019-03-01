@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 
 export const CountContext = React.createContext();
@@ -19,49 +19,74 @@ export class CountProvider extends Component {
 
       gpa: 0,
 
-    }
+    };
 
-    this.updateTotal = this.updateTotal.bind(this);
     this.updateNumber = this.updateNumber.bind(this);
 
   }
 
-  async updateNumber(event) {
-    console.log(event.target.value);
-    await this.setState({ pass: this.state.pass + event.target.value });
-    await this.updateGPA();
-  }
+  async updateNumber(event, unit) {
+    const value = parseInt(event.target.value);
+    console.log(event.keyCode);
+    console.log(value);
 
-  async updateTotal(unit) {
-    switch (unit) {
-      case "f":
-        await this.setState({ fail: this.state.fail + 1 });
-        await this.updateGPA();
-        break;
-      case "p":
-        await this.setState({ pass: this.state.pass + 1 });
-        await this.updateGPA();
-        break;
-      case "c":
-        await this.setState({ credit: this.state.credit + 1 });
+    if(value){
+      switch (unit) {
+        case "f":
+          await this.setState({fail:  value});
+          await this.updateGPA();
+          break;
+        case "p":
+          await this.setState({pass:  value});
+          await this.updateGPA();
+          break;
+        case "c":
+          await this.setState({credit:  value});
+          await this.updateGPA();
+          break;
+        case "d":
+          await this.setState({distinction:  value});
+          await this.updateGPA();
+          break;
+        case "hd":
+          await this.setState({highDistinction:  value});
+          await this.updateGPA();
+          break;
+        default:
+          console.log('Nothing to do');
+          break;
+      }
 
-        await this.updateGPA();
-        break;
-      case "d":
-        await this.setState({ distinction: this.state.distinction + 1 });
+      }else {
+      switch (unit) {
+        case "f":
+          await this.setState({fail:  0});
+          await this.updateGPA();
+          break;
+        case "p":
+          await this.setState({pass:  0});
+          await this.updateGPA();
+          break;
+        case "c":
+          await this.setState({credit:  0});
+          await this.updateGPA();
+          break;
+        case "d":
+          await this.setState({distinction:  0});
+          await this.updateGPA();
+          break;
+        case "hd":
+          await this.setState({highDistinction:  0});
+          await this.updateGPA();
+          break;
+        default:
+          console.log('Nothing to do');
+          break;
+      }
 
-        await this.updateGPA();
-        break;
-      case "hd":
-        await this.setState({ highDistinction: this.state.highDistinction + 1 });
-
-        await this.updateGPA();
-        break;
-      default:
-        console.log('nothing to do');
-        break;
     }
   }
+
 
   async updateGPA() {
     // get state
@@ -78,7 +103,6 @@ export class CountProvider extends Component {
 
     // Sum TotalPoint  = 12 * Unit number * UnitWeight
     const totalPoint = 12 * ((fail * 0) + (pass * 4) + (credit * 5) + (distinction * 6) + (highDistinction * 7));
-    console.log(totalPoint);
 
     // GPA = TotalPoint / Credit Point
     const gpa = totalPoint / creditPoint;

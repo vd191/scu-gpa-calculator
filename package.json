@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "@blueprintjs/core": "^3.13.0",
+    "@blueprintjs/icons": "latest",
+    "gatsby-cli": "^2.4.11",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5",
-    "@blueprintjs/icons": "latest"
+    "react-scripts": "2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
