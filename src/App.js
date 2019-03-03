@@ -11,7 +11,6 @@ import './App.css';
 class App extends Component {
 
   render() {
-    const {} = this.state;
     return (
       <CountProvider>
         <div className="App">
