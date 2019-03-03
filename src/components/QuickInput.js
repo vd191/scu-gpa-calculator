@@ -10,7 +10,8 @@ export default class QuickInput extends Component {
     return (
       <div>
         <h2> QUICK INPUT </h2>
-        <p> If all of your units are single-weighted units (12 credit points each), so you can quick calculate your GPA
+        <p> If all of your units are single-weighted units
+          (12 credit points each), so you can quick calculate your GPA
         by putting the number of units you have done so far below.
         </p>
 

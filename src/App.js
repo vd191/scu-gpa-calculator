@@ -9,16 +9,6 @@ import Image from './components/Image';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      units: [
-        {name: "Object Oriented Programming", grade: "Credit", credit: 12},
-        {name: "Website Development 2", grade: "Pass", credit: 12},
-      ]
-    }
-  }
 
   render() {
     const {} = this.state;
@@ -27,7 +17,7 @@ class App extends Component {
         <div className="App">
 
           <div className="image">
-            <Image />
+            <Image/>
           </div>
 
 
